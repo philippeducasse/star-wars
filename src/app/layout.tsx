@@ -38,7 +38,7 @@ export default function RootLayout({
         inter.variable,
       )}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col text-sw-yellow">
         <div className="container mx-auto grow p-4 sm:p-6 lg:p-8">
           <header className="flex justify-between pb-4 w-full">
             <Navbar />
