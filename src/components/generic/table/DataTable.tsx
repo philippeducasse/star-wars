@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   Table,
   TableBody,
@@ -33,7 +34,13 @@ export const DataTable = <T,>({ data, columns }: Props<T>) => (
           <TableRow key={i}>
             {columns.map((col) => (
               <TableCell key={String(col.accessor)}>
-                {String(row[col.accessor])}
+                {col.getHref ? (
+                  <Link href={col.getHref(row)} className="font-medium hover:underline">
+                    {String(row[col.accessor])}
+                  </Link>
+                ) : (
+                  String(row[col.accessor])
+                )}
               </TableCell>
             ))}
           </TableRow>
