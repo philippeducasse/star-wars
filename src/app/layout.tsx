@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist, Geist_Mono, News_Cycle } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "./providers";
 import { Navbar } from "@/components/generic/navigation/Navbar";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const newsCycle = News_Cycle({
+  weight: ["400", "700"],
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,7 +39,7 @@ export default function RootLayout({
         geistSans.variable,
         geistMono.variable,
         "font-sans",
-        inter.variable,
+        newsCycle.variable,
       )}
     >
       <body className="min-h-full flex flex-col text-sw-yellow">

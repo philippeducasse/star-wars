@@ -9,17 +9,17 @@ interface DetailsViewSectionProps {
 }
 
 const DetailsViewSection = ({ title, icon, data, action }: DetailsViewSectionProps) => (
-  <div className="mb-6 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden">
-    <div className="flex items-center justify-between gap-2 px-8 py-4 border-b border-gray-200 dark:border-gray-700">
+  <div className="mb-6 rounded-lg border border-sw-yellow/20 overflow-hidden shadow-[0_0_8px_rgba(255,232,31,0.05)]">
+    <div className="flex items-center justify-between gap-2 px-8 py-4 border-b border-sw-yellow/20 bg-sw-yellow/5">
       <div className="flex items-center gap-2">
         {icon}
-        <h3 className="text-lg font-semibold text-black dark:text-foreground">{title}</h3>
+        <h3 className="text-lg font-semibold text-sw-yellow tracking-wide">{title}</h3>
       </div>
       {action}
     </div>
     <div className="py-2">
       {data.length === 0 ? (
-        <p className="text-gray-500 dark:text-gray-400 italic mx-8 my-3">{`No ${title.toLowerCase()}`}</p>
+        <p className="text-muted-foreground italic mx-8 my-3">{`No ${title.toLowerCase()}`}</p>
       ) : (
         <DetailsView data={data} />
       )}
