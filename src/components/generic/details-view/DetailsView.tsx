@@ -3,6 +3,7 @@ import Row from "./Row";
 export type RowData = {
   title: string;
   value: string;
+  href?: string;
 };
 
 const DetailsView = ({ data }: { data: RowData[] }) =>
