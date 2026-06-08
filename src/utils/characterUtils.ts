@@ -1,15 +1,13 @@
 import { Column } from "@/components/generic/table/DataTable";
 import { Character } from "@/types/characters";
 import { RowData } from "@/components/generic/details-view/DetailsView";
-
-export const getCharacterIdFromUrl = (url: string): string =>
-  url.split("/").filter(Boolean).pop() ?? "";
+import { getIdFromUrl } from "@/lib/utils";
 
 export const characterColumns: Column<Character>[] = [
   {
     header: "Name",
     accessor: "name",
-    getHref: (char) => `/characters/${getCharacterIdFromUrl(char.url)}`,
+    getHref: (char) => `/characters/${getIdFromUrl(char.url)}`,
   },
   { header: "Height", accessor: "height" },
   { header: "Gender", accessor: "gender" },
@@ -24,5 +22,9 @@ export const characterToRows = (character: Character): RowData[] => [
   { title: "Hair Color", value: character.hair_color },
   { title: "Skin Color", value: character.skin_color },
   { title: "Eye Color", value: character.eye_color },
-  { title: "Homeworld", value: character.homeworld },
+  {
+    title: "Homeworld",
+    value: `Planet ${getIdFromUrl(character.homeworld)}`,
+    href: `/planets/${getIdFromUrl(character.homeworld)}`,
+  },
 ];
