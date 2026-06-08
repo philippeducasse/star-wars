@@ -5,4 +5,5 @@ export type Film = {
   producer: string;
   release_date: string;
   opening_crawl: string;
+  url: string;
 };

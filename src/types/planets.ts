@@ -6,4 +6,7 @@ export type Planet = {
   gravity: string;
   terrain: string;
   climate: string;
+  surface_water: string;
+  population: string;
+  url: string;
 };
