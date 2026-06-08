@@ -28,18 +28,21 @@ export function Navbar() {
       <NavigationMenuList>
         {components.map((component, idx) =>
           component === "logo" ? (
-            <Image
-              src={"sw_logo.svg"}
-              key={"logo"}
-              alt="star wars classic logo"
-              width={150}
-              height={50}
-              className="mx-6"
-            />
+            <NavigationMenuItem key={"logo"}>
+              <Link href="/">
+                <Image
+                  src={"/sw_logo.svg"}
+                  alt="star wars classic logo"
+                  width={150}
+                  height={50}
+                  className="mx-6"
+                />
+              </Link>
+            </NavigationMenuItem>
           ) : (
             <NavigationMenuItem key={`${component}_${idx}`}>
               <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-                <Link href={component}>
+                <Link href={`/${component}`}>
                   <p className="text-2xl text-sw-yellow">{capitalize(component)}</p>
                 </Link>
               </NavigationMenuLink>
