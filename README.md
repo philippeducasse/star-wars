@@ -1,7 +1,7 @@
 # Star Wars Explorer
 
 Browsing the [SWAPI](https://swapi.py4e.com) Star Wars API.
-
+Built with NextJs
 ## Getting started
 
 ```bash
